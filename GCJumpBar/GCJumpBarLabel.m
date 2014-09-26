@@ -168,7 +168,7 @@ const NSInteger GCJumpBarLabelAccessoryMenuLabelTag = -1;
     [style setLineBreakMode:NSLineBreakByTruncatingTail];
 	
 	NSColor* textColor = [NSColor controlTextColor];
-	if( ![self.window isKeyWindow] ) {
+	if( ![self.window isKeyWindow] && ![self.window isMainWindow] ) {
 		textColor = [NSColor disabledControlTextColor];
 	}
 	
