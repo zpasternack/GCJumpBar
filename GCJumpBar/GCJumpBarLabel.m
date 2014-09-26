@@ -166,8 +166,13 @@ const NSInteger GCJumpBarLabelAccessoryMenuLabelTag = -1;
     
     NSMutableParagraphStyle* style = [[NSMutableParagraphStyle alloc] init];
     [style setLineBreakMode:NSLineBreakByTruncatingTail];
-    
-    NSDictionary* attributes = [[NSDictionary alloc] initWithObjectsAndKeys:[NSColor blackColor], NSForegroundColorAttributeName,
+	
+	NSColor* textColor = [NSColor controlTextColor];
+	if( ![self.window isKeyWindow] ) {
+		textColor = [NSColor disabledControlTextColor];
+	}
+	
+    NSDictionary* attributes = [[NSDictionary alloc] initWithObjectsAndKeys:textColor, NSForegroundColorAttributeName,
                                 highlightShadow, NSShadowAttributeName,
                                 [NSFont systemFontOfSize:12.0], NSFontAttributeName ,
                                 style, NSParagraphStyleAttributeName, nil];
