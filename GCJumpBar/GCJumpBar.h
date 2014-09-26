@@ -31,6 +31,9 @@
 
 @property (nonatomic, retain) NSGradient* backgroundGradient;
 
+@property (nonatomic, assign) BOOL bordered;
+@property (nonatomic, assign) BOOL drawsBackground;
+
 - (id) initWithFrame:(NSRect)frameRect menu:(NSMenu*) aMenu;
 - (NSMenuItem*) menuItemAtIndexPath:(NSIndexPath*) indexPath;
 - (void) changeFontAndImageInMenu:(NSMenu*) subMenu;
